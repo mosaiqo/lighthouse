@@ -2,6 +2,7 @@
 
 namespace Nuwave\Lighthouse\Schema\Factories;
 
+use GraphQL\Utils\Utils;
 use GraphQL\Language\AST\NameNode;
 use GraphQL\Type\Definition\Directive;
 use GraphQL\Type\Definition\FieldArgument;
