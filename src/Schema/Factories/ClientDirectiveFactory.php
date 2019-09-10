@@ -57,11 +57,11 @@ class ClientDirectiveFactory
         return new Directive([
             'name' => $directive->name->value,
             'description' => data_get($directive->description, 'value'),
-            'locations' => array_map(
-                function (NameNode $location): string {
-                    return $location->value;
-                },
-                $directive->locations
+            'locations' => Utils::map(
+                $directive->locations,
+                static function ($node) {
+                    return $node->value;
+                }
             ),
             'args' => $arguments,
             'astNode' => $directive,
